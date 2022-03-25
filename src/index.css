@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  border-color: #dee2e6 #fff #dee2e6 #dee2e6 !important;
+  border-radius: 0 !important;
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+  background-color: white !important;
+}
+.nav-tabs .nav-link {
+  border-color: transparent !important;
+  border-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  padding-top: 0.60rem;
+  padding-bottom: 0.60rem;
+  color: #fff;
+}
+
+.nav-tabs {
+  background-color: #0070BB !important;
+}
+
+.form-control[readonly] {
+  background-color: #8bc53e25 !important;
+  border-color: transparent !important;
+}
+
+.border-phcn {
+  border: 1px solid #8bc53e !important;
+}
+
+.timestamp {
+  color: #aaaaaa;
+}
