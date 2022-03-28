@@ -33,9 +33,16 @@ code {
   background-color: #0070BB !important;
 }
 
-.form-control[readonly] {
-  background-color: #8bc53e25 !important;
-  border-color: transparent !important;
+.form-control {
+  background-color: #8bc53e25;
+  border-color: transparent;
+}
+
+.is-selected {
+  color: #212529;
+  border-color: #8bc53e;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #8bc53e70;
 }
 
 .border-phcn {
