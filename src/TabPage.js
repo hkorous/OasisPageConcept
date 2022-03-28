@@ -6,19 +6,38 @@ export default class TabPage extends Component {
         super(props);
         this.state = {
             selected: [],
+            selectedCard: {},
         };
     }
-    findValue = targetField => () => {
+    highlightValue = targetValue => (e) => {
+
+        if(this.state.selectedCard !== undefined && this.state.selectedCard.classList !== undefined && this.state.selectedCard !== e.currentTarget)
+        {
+            this.state.selectedCard.classList.remove('is-selected');
+        }
+
+        e.currentTarget.classList.add('is-selected');
+        this.setState({selectedCard: e.currentTarget});
+
+        // var target = e.target;
+        // var parent = e.target.parentNode;
+        // var outmost = e.currentTarget;
+        // while(parent)
+        // {
+        //     if(parent.parentNode == outmost)
+        // }
+
+
         var content = document.getElementById('tab-demographics-content');
         var selected = this.state.selected;
         for (var i = 0; i < selected.length; i++) {
             selected[i].classList.remove('is-selected');
         }
-        this.state.selected = [];
+        this.setState.selected = [];
         var divs = content.getElementsByClassName('selectable');
         for (var i = 0; i < divs.length; i++) {
             var div = divs[i];
-            var indexOf = div.innerText.indexOf(targetField);
+            var indexOf = div.innerText.indexOf(targetValue);
             if (indexOf !== -1) {
                 var targets = div.parentNode.getElementsByClassName('selectable-value');
                 for (var j = 0; j < targets.length; j++) {
@@ -192,23 +211,23 @@ export default class TabPage extends Component {
                             </div>
                             <div className="col-lg-3 vh-100 overflow-auto">
                                 <h5>Comments</h5>
-                                <div className="card border border-phcn mb-3" onClick={this.findValue("Birth Date")}>
+                                <div className="card border border-phcn mb-3" onClick={this.highlightValue("Birth Date")}>
                                     <div className="card-body">
                                         <p className="card-text"><small className="text-muted">Birth Date</small></p>
                                         <p className="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
                                         <p className="card-text"><small className="text-muted">Last updated 3/21/22 @9:00am</small></p>
                                     </div>
                                 </div>
-                                <div className="card border border-phcn mb-3" onClick={this.findValue("Gender")}>
+                                <div className="card border border-phcn mb-3" onClick={this.highlightValue("Gender")}>
                                     <div className="card-body">
                                         <p className="card-text"><small className="text-muted">Gender</small></p>
                                         <p className="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
                                         <p className="card-text"><small className="text-muted">Last updated 3/21/22 @9:00am</small></p>
                                     </div>
                                 </div>
-                                <div className="card border border-phcn mb-3">
+                                <div className="card border border-phcn mb-3" onClick={this.highlightValue("Physician")}>
                                     <div className="card-body">
-                                        <p className="card-text"><small className="text-muted">Dr. Phil</small></p>
+                                        <p className="card-text"><small className="text-muted">Physician</small></p>
                                         <p className="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
                                         <p className="card-text"><small className="text-muted">Last updated 3/21/22 @9:00am</small></p>
                                     </div>
